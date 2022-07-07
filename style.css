@@ -1,0 +1,84 @@
+body{
+    background-color: rgba(0, 0, 0, 0.604);
+}
+
+.container{
+    width : 317px; 
+    height: 500px;
+    border: 5px solid rgba(0, 0, 0, 0.604);
+    background-color: grey;
+}
+.display{
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    border: 5px solid black;
+    background-color: white;
+}
+.op1{
+    margin-left:10px ;
+    }
+    
+
+.button{
+    width: 303px;
+    height: 300px;
+    margin-left: 10px;
+    padding: 5px;
+}
+.op2{
+    float: right;
+    width: 70px;
+    margin: 0px;
+    }
+.botonera1{
+    float: left;
+    width: 218px;
+}
+
+.numeros{
+margin:10px ;
+width: 50px;
+height:50px;
+background-color: rgb(191, 255, 255);
+
+}    
+.operaciones1{
+margin-left: 15px;
+margin-right: 5px;
+margin-top: 0px;
+margin-bottom: 0px;
+width: 50px;
+height:50px;
+background-color: aqua;
+}
+.operaciones2{
+    margin: 10px;
+    width: 123px;
+    height:50px;
+    margin-bottom: 10px;
+    background-color: aqua;
+    }
+
+.operaciones3{
+    margin: 10px;
+    margin-left: -1px;
+    width: 50px;
+    height:50px;
+    background-color: aqua;
+}
+.operaciones4{
+    margin: 10px;
+    margin-left: -1px;
+    width: 50px;
+    height:50px;
+    background-color: rgb(244, 12, 12);
+}
+
+.resultado{
+margin: 10px;
+margin-left: -1px;
+width: 50px;
+height:120px;
+background-color: rgb(4, 244, 4);
+}
