@@ -854,7 +854,7 @@ borrar.onclick = ()=>{
                 pantalla.innerText = "0";
             }
         }
-    }
+}
 
 
 
