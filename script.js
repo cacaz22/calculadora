@@ -28,9 +28,11 @@ let resultado    ="";
 let prevPantalla ="";
 let a ="";
 let b ="";
+let lastkey = "";
 //botones
 
 btn0.onclick = function(){
+    
     // a = parseInt(valor);
     // b = parseInt(this.value)
     valor = valor + this.value;
@@ -42,6 +44,7 @@ btn0.onclick = function(){
     divi.disabled  = false;
 }
 btn1.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -51,6 +54,7 @@ btn1.onclick = function(){
     divi.disabled  = false;
 }
 btn2.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -60,6 +64,7 @@ btn2.onclick = function(){
     divi.disabled  = false;
 }
 btn3.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -69,6 +74,7 @@ btn3.onclick = function(){
     divi.disabled  = false;
 }
 btn4.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -78,6 +84,7 @@ btn4.onclick = function(){
     divi.disabled  = false;
 }
 btn5.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -87,6 +94,7 @@ btn5.onclick = function(){
     divi.disabled  = false;
 }
 btn6.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -96,6 +104,7 @@ btn6.onclick = function(){
     divi.disabled  = false;
 }
 btn7.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -105,6 +114,7 @@ btn7.onclick = function(){
     divi.disabled  = false;
 }
 btn8.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -114,6 +124,7 @@ btn8.onclick = function(){
     divi.disabled  = false;
 }
 btn9.onclick = function(){
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
     borrar.disabled = false;
@@ -129,6 +140,7 @@ btn9.onclick = function(){
 // }
 //operaciones 
 suma.onclick = ()=>{
+    lastkey = "operacion";
     if ((valor === pantalla.innerText)&&(valor2 !== "")&&(resultado ==="")){
         switch (operacion) {
             case "*":
@@ -246,7 +258,7 @@ suma.onclick = ()=>{
         operacion = "+";
         console.log(operacion);
         pantalla.innerText ="+";
-    }else if (resultado === pantalla.innerText){
+    }else if (resultado == pantalla.innerText){
         valor2 = resultado; 
         valor="";
         resultado="";
@@ -258,7 +270,7 @@ suma.onclick = ()=>{
 }
 
 resta.onclick = ()=>{
-    
+    lastkey = "operacion";
     if ((valor === pantalla.innerText)&&(valor2 !== "")&&(resultado ==="")){
         switch (operacion) {
             case "*":
@@ -377,7 +389,7 @@ resta.onclick = ()=>{
         operacion = "-";
         console.log(operacion);
         pantalla.innerText ="-";
-    }else if (resultado === pantalla.innerText){
+    }else if (resultado == pantalla.innerText){
         valor2 = resultado; 
         valor="";
         resultado="";
@@ -389,7 +401,7 @@ resta.onclick = ()=>{
 }
 
 multi.onclick = ()=>{
-
+    lastkey = "operacion";
     if ((valor === pantalla.innerText)&&(valor2 !== "")&&(resultado ==="")){
         switch (operacion) {
             case "*":
@@ -507,7 +519,7 @@ multi.onclick = ()=>{
         operacion = "*";
         console.log(operacion);
         pantalla.innerText ="*";
-    }else if (resultado === pantalla.innerText){
+    }else if (resultado == pantalla.innerText){
         valor2 = resultado; 
         valor="";
         resultado="";
@@ -519,6 +531,7 @@ multi.onclick = ()=>{
 } 
 
 divi.onclick = ()=>{
+    lastkey = "operacion";
     if ((valor === pantalla.innerText)&&(valor2 !== "")&&(resultado ==="")){
         switch (operacion) {
             case "*":
@@ -636,7 +649,7 @@ divi.onclick = ()=>{
         operacion = "/";
         console.log(operacion);
         pantalla.innerText ="/";
-    }else if (resultado === pantalla.innerText){
+    }else if (resultado == pantalla.innerText){
         valor2 = resultado; 
         valor="";
         resultado="";
@@ -648,6 +661,7 @@ divi.onclick = ()=>{
 } 
  
 porcentaje.onclick = ()=>{
+    lastkey = "operacion";
     if ((valor === pantalla.innerText)&&(valor2 !== "")&&(resultado ==="")){
         switch (operacion) {
             case "*":
@@ -765,7 +779,7 @@ porcentaje.onclick = ()=>{
         operacion = "%";
         console.log(operacion);
         pantalla.innerText ="%";
-    }else if (resultado === pantalla.innerText){
+    }else if (resultado == pantalla.innerText){
         valor2 = resultado; 
         valor="";
         resultado="";
@@ -778,37 +792,55 @@ porcentaje.onclick = ()=>{
 //finalizar
 
 enter.addEventListener("click",()=>{
+    lastkey = "enter";
+
     if(resultado===""){
         a = parseInt(valor2);
         b = parseInt(valor);
-    }else{
+    }else if (resultado !== ""){
         a = parseInt(resultado); 
         b = parseInt(valor);  
         }
     if (operacion === "+") {
+        valor ="";
+        valor2="";
+        operacion="";
         resultado = a + b;
         pantalla.innerText = resultado;
     }else if (operacion ==="-") {
+        valor="";
+        valor2="";
+        operacion="";
         resultado = a - b;
         pantalla.innerText = resultado;
     }else if (operacion === "/") {
+        valor = "";
+        valor2= "";
+        operacion="";
         resultado = a / b;
         pantalla.innerText = resultado;
     } else if (operacion === "*") {
-        valor = "";
-        valor2= "";
+        valor ="";
+        valor2="";
+        operacion="";
         resultado = a * b;
         pantalla.innerText = resultado;
     } else if (operacion==="%"){
+        valor ="";
+        valor2="";
+        operacion="";
         resultado = ((a*b)/100);
         console.log(resultado);
         pantalla.innerText = resultado;
+    }else {
+        console.log("holaxd");
     }
     
     
 });
 
 clear.addEventListener('click',()=>{
+    lastkey = "";
     valor ="";
     valor2="";
     operacion = "";
@@ -834,6 +866,7 @@ clear.addEventListener('click',()=>{
 
 })
 borrar.onclick = ()=>{
+    lastkey = "";
     console.log({valor});
     console.log({valor2});
         if (pantalla.innerText==valor) {
@@ -872,5 +905,5 @@ agregar sonidos
 
 */
 test.onclick = ()=>{
-    console.log({valor,valor2,operacion,resultado,prevPantalla,a,b});
+    console.log({valor,valor2,operacion,resultado,prevPantalla,a,b,pantalla});
 }
