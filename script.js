@@ -8,7 +8,7 @@ const btn6 = document.getElementById('num6');
 const btn7 = document.getElementById('num7');
 const btn8 = document.getElementById('num8');
 const btn9 = document.getElementById('num9');
-// const btnPnt = document.getElementById('punto');
+const btnPnt = document.getElementById('punto');
 
 const enter      = document.querySelector('.resultado');
 const clear      = document.querySelector('#clear');
@@ -32,112 +32,59 @@ let lastkey = "";
 //botones
 
 btn0.onclick = function(){
-    
-    // a = parseInt(valor);
-    // b = parseInt(this.value)
+    lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn1.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn2.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn3.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn4.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn5.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn6.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn7.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn8.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
 btn9.onclick = function(){
     lastkey = "num";
     valor = valor + this.value;
     pantalla.innerText = valor;
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;
 }
-// btnPnt.onclick = function(){
-//     valor = valor + this.value;
-//     pantalla.innerText = valor;
-//     console.log(valor);
-// }
+btnPnt.onclick = function(){
+    valor = valor + this.value;
+   pantalla.innerText = valor;
+}
 //operaciones 
 suma.onclick = ()=>{
     lastkey = "operacion";
@@ -164,7 +111,7 @@ suma.onclick = ()=>{
                 break;
             
             case "+":
-                    resultado =  (parseInt(valor2) + parseInt(valor));  
+                    resultado =  Number(valor2) + Number(valor);  
                     valor= "";
                     valor2="";
                     operacion="+";
@@ -220,7 +167,7 @@ suma.onclick = ()=>{
             break;
         
         case "+":
-                resultado =  (parseInt(resultado) + parseInt(valor));  
+                resultado =  (Number(resultado) + Number(valor));  
                 valor= "";
                 valor2="";
                 operacion="+";
@@ -294,7 +241,7 @@ resta.onclick = ()=>{
                 break;
             
             case "+":
-                    resultado =  (parseInt(valor2) + parseInt(valor));
+                    resultado =  (Number(valor2) + Number(valor));
                     valor= "";
                     valor2="";
                     operacion="-";
@@ -350,7 +297,7 @@ resta.onclick = ()=>{
             break;
         
         case "+":
-                resultado =  (parseInt(resultado) + parseInt(valor)); 
+                resultado =  (Number(resultado) + Number(valor)); 
                 valor= "";
                 valor2="";
                 operacion="-";
@@ -425,7 +372,7 @@ multi.onclick = ()=>{
                 break;
             
             case "+":
-                    resultado =  (parseInt(valor2) + parseInt(valor));
+                    resultado =  (Number(valor2) + Number(valor));
                     valor= "";
                     valor2="";
                     operacion="*";
@@ -481,7 +428,7 @@ multi.onclick = ()=>{
             break;
         
         case "+":
-                resultado =  (parseInt(resultado) + parseInt(valor));
+                resultado =  (Number(resultado) + Number(valor));
                 valor= "";
                 valor2="";
                 operacion="*";
@@ -555,7 +502,7 @@ divi.onclick = ()=>{
                 break;
             
             case "+":
-                    resultado =  (parseInt(valor2) + parseInt(valor));  
+                    resultado =  (Number(valor2) + Number(valor));  
                     valor= "";
                     valor2="";
                     operacion="/";
@@ -611,7 +558,7 @@ divi.onclick = ()=>{
             break;
         
         case "+":
-                resultado =  (parseInt(resultado) + parseInt(valor));  
+                resultado =  (Number(resultado) + Number(valor));  
                 valor= "";
                 valor2="";
                 operacion="/";
@@ -685,7 +632,7 @@ porcentaje.onclick = ()=>{
                 break;
             
             case "+":
-                    resultado =  (parseInt(valor2) + parseInt(valor));  
+                    resultado =  (Number(valor2) + Number(valor));  
                     valor= "";
                     valor2="";
                     operacion="%";
@@ -741,7 +688,7 @@ porcentaje.onclick = ()=>{
             break;
         
         case "+":
-                resultado =  (parseInt(resultado) + parseInt(valor));  
+                resultado =  (Number(resultado) + Number(valor));  
                 valor= "";
                 valor2="";
                 operacion="%";
@@ -795,11 +742,11 @@ enter.addEventListener("click",()=>{
     lastkey = "enter";
 
     if(resultado===""){
-        a = parseInt(valor2);
-        b = parseInt(valor);
+        a = Number(valor2);
+        b = Number(valor);
     }else if (resultado !== ""){
-        a = parseInt(resultado); 
-        b = parseInt(valor);  
+        a = Number(resultado); 
+        b = Number(valor);  
         }
     if (operacion === "+") {
         valor ="";
@@ -833,6 +780,7 @@ enter.addEventListener("click",()=>{
         console.log(resultado);
         pantalla.innerText = resultado;
     }else {
+        pantalla.innerText = "agrega algo para calcular ameo xd"
         console.log("holaxd");
     }
     
@@ -846,24 +794,7 @@ clear.addEventListener('click',()=>{
     operacion = "";
     resultado = "";
     pantalla.innerText = "0";
-
-    btn0.disabled = false;
-    btn1.disabled = false;
-    btn2.disabled = false;
-    btn3.disabled = false;
-    btn4.disabled = false;
-    btn5.disabled = false;
-    btn6.disabled = false;
-    btn7.disabled = false;
-    btn8.disabled = false;
-    btn9.disabled = false;  
-    borrar.disabled = false;
-    suma.disabled  = false;
-    resta.disabled = false;
-    multi.disabled = false;
-    divi.disabled  = false;  
     
-
 })
 borrar.onclick = ()=>{
     lastkey = "";
@@ -894,9 +825,11 @@ borrar.onclick = ()=>{
 /*
 tareas a hacer:
 
--agregar funcion al boton % -----------
--agregar que si existen 2 valores al apretar una operacion se lleve a cabo la anterior
--agregar que el boton enter tire un error si no ingresaste nada
+-agregar funcion al boton % -listo-
+-agregar que si existen 2 valores al apretar una operacion se lleve a cabo la anterior -listo-
+-agregar que el boton enter tire un error si no ingresaste nada -listo-
+-poder usar numeros con . -listo-
+-agregar limite de cifras a 20
 -pantalla 2 para poder borrar operaciones?
 -simplificar el codigo
 
